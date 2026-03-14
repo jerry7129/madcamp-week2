@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBBC1" format="2">
+  <advance width="864"/>
+  <unicode hex="BBC1"/>
+  <outline>
+    <contour>
+      <point x="720" y="761" type="line"/>
+      <point x="720" y="465" type="line"/>
+      <point x="131" y="465" type="line"/>
+      <point x="131" y="761" type="line"/>
+    </contour>
+    <contour>
+      <point x="206" y="699" type="line"/>
+      <point x="206" y="527" type="line"/>
+      <point x="642" y="527" type="line"/>
+      <point x="642" y="699" type="line"/>
+    </contour>
+    <contour>
+      <point x="822" y="374" type="line"/>
+      <point x="822" y="312" type="line"/>
+      <point x="28" y="312" type="line"/>
+      <point x="28" y="374" type="line"/>
+    </contour>
+    <contour>
+      <point x="724" y="211" type="line"/>
+      <point x="724" y="-88" type="line"/>
+      <point x="646" y="-88" type="line"/>
+      <point x="646" y="147" type="line"/>
+      <point x="112" y="147" type="line"/>
+      <point x="112" y="211" type="line"/>
+    </contour>
+  </outline>
+</glyph>

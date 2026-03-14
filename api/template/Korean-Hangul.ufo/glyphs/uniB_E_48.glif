@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBE48" format="2">
+  <advance width="864"/>
+  <unicode hex="BE48"/>
+  <outline>
+    <contour>
+      <point x="157" y="727" type="line"/>
+      <point x="157" y="581" type="line"/>
+      <point x="413" y="581" type="line"/>
+      <point x="413" y="727" type="line"/>
+      <point x="489" y="727" type="line"/>
+      <point x="489" y="299" type="line"/>
+      <point x="81" y="299" type="line"/>
+      <point x="81" y="727" type="line"/>
+    </contour>
+    <contour>
+      <point x="157" y="360" type="line"/>
+      <point x="413" y="360" type="line"/>
+      <point x="413" y="521" type="line"/>
+      <point x="157" y="521" type="line"/>
+    </contour>
+    <contour>
+      <point x="752" y="788" type="line"/>
+      <point x="752" y="147" type="line"/>
+      <point x="676" y="147" type="line"/>
+      <point x="676" y="788" type="line"/>
+    </contour>
+    <contour>
+      <point x="772" y="4" type="line"/>
+      <point x="772" y="-61" type="line"/>
+      <point x="186" y="-61" type="line"/>
+      <point x="186" y="212" type="line"/>
+      <point x="263" y="212" type="line"/>
+      <point x="263" y="4" type="line"/>
+    </contour>
+  </outline>
+</glyph>

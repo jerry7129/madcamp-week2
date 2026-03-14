@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniB370" format="2">
+  <advance width="864"/>
+  <unicode hex="B370"/>
+  <outline>
+    <contour>
+      <point x="778" y="789" type="line"/>
+      <point x="778" y="-79" type="line"/>
+      <point x="704" y="-79" type="line"/>
+      <point x="704" y="789" type="line"/>
+    </contour>
+    <contour>
+      <point x="601" y="768" type="line"/>
+      <point x="601" y="-34" type="line"/>
+      <point x="527" y="-34" type="line"/>
+      <point x="527" y="393" type="line"/>
+      <point x="338" y="393" type="line"/>
+      <point x="338" y="457" type="line"/>
+      <point x="527" y="457" type="line"/>
+      <point x="527" y="768" type="line"/>
+    </contour>
+    <contour>
+      <point x="396" y="682" type="line"/>
+      <point x="396" y="618" type="line"/>
+      <point x="144" y="618" type="line"/>
+      <point x="144" y="194" type="line"/>
+      <point x="269" y="194"/>
+      <point x="347" y="200"/>
+      <point x="441" y="221" type="curve"/>
+      <point x="449" y="155" type="line"/>
+      <point x="348" y="134"/>
+      <point x="264" y="131"/>
+      <point x="124" y="130" type="curve" smooth="yes"/>
+      <point x="69" y="130" type="line"/>
+      <point x="69" y="682" type="line"/>
+    </contour>
+  </outline>
+</glyph>

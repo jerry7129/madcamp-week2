@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniB2EB" format="2">
+  <advance width="864"/>
+  <unicode hex="B2EB"/>
+  <outline>
+    <contour>
+      <point x="714" y="789" type="line"/>
+      <point x="714" y="584" type="line"/>
+      <point x="845" y="584" type="line"/>
+      <point x="845" y="520" type="line"/>
+      <point x="714" y="520" type="line"/>
+      <point x="714" y="300" type="line"/>
+      <point x="638" y="300" type="line"/>
+      <point x="638" y="789" type="line"/>
+    </contour>
+    <contour>
+      <point x="461" y="732" type="line"/>
+      <point x="461" y="669" type="line"/>
+      <point x="152" y="669" type="line"/>
+      <point x="152" y="415" type="line"/>
+      <point x="326" y="415"/>
+      <point x="426" y="420"/>
+      <point x="542" y="444" type="curve"/>
+      <point x="552" y="381" type="line"/>
+      <point x="430" y="357"/>
+      <point x="327" y="351"/>
+      <point x="144" y="351" type="curve" smooth="yes"/>
+      <point x="76" y="351" type="line"/>
+      <point x="76" y="732" type="line"/>
+    </contour>
+    <contour>
+      <point x="723" y="251" type="line"/>
+      <point x="723" y="188" type="line"/>
+      <point x="246" y="188" type="line"/>
+      <point x="246" y="-5" type="line"/>
+      <point x="738" y="-5" type="line"/>
+      <point x="738" y="-67" type="line"/>
+      <point x="169" y="-67" type="line"/>
+      <point x="169" y="251" type="line"/>
+    </contour>
+  </outline>
+</glyph>

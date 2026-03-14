@@ -1,0 +1,40 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  line-height: 1;
+  /* font-family: Pretendard; */
+  /* font-size: 16px; */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Pretendard, 'Pretendard Std', Arial, Helvetica, sans-serif;
+}
+
+.selection-area {
+  z-index: 100;
+  background-color: rgba(127, 127, 127, 0.1);
+  border: 1px solid rgba(127, 127, 127, 0.3);
+}

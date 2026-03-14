@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniAE30" format="2">
+  <advance width="864"/>
+  <unicode hex="AE30"/>
+  <outline>
+    <contour>
+      <point x="753" y="789" type="line"/>
+      <point x="753" y="-79" type="line"/>
+      <point x="676" y="-79" type="line"/>
+      <point x="676" y="789" type="line"/>
+    </contour>
+    <contour>
+      <point x="496" y="694" type="line"/>
+      <point x="495" y="444"/>
+      <point x="379" y="224"/>
+      <point x="88" y="84" type="curve"/>
+      <point x="46" y="146" type="line"/>
+      <point x="281" y="257"/>
+      <point x="400" y="424"/>
+      <point x="418" y="632" type="curve"/>
+      <point x="86" y="632" type="line"/>
+      <point x="86" y="694" type="line"/>
+    </contour>
+  </outline>
+</glyph>

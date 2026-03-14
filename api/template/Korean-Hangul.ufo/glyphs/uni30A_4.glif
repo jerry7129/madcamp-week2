@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni30A4" format="2">
+  <advance width="937"/>
+  <unicode hex="30A4"/>
+  <outline>
+    <contour>
+      <point x="71" y="371" type="line"/>
+      <point x="334" y="407"/>
+      <point x="652" y="574"/>
+      <point x="811" y="761" type="curve"/>
+      <point x="863" y="714" type="line"/>
+      <point x="788" y="627"/>
+      <point x="681" y="543"/>
+      <point x="559" y="474" type="curve"/>
+      <point x="559" y="-46" type="line"/>
+      <point x="482" y="-46" type="line"/>
+      <point x="482" y="434" type="line"/>
+      <point x="351" y="368"/>
+      <point x="211" y="321"/>
+      <point x="83" y="303" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

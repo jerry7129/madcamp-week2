@@ -1,0 +1,76 @@
+services:
+  # 1. Spring Boot API
+  api:
+    build: .
+    container_name: fontogether_api
+    ports:
+      - "8080:80" # (선택) 백엔드 직접 테스트용. 운영 시 주석 처리 가능. Nginx가 내부 80으로 연결함.
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    networks:
+      - font-net
+
+  # 1.5 Nginx (Reverse Proxy & Frontend Server)
+  nginx:
+    image: nginx:alpine
+    container_name: fontogether_nginx
+    ports:
+      - "80:80" # 외부 80 포트를 Nginx가 점유
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    networks:
+      - font-net
+
+  # 2. PostgreSQL 데이터베이스
+  postgres:
+    image: postgres:16-alpine # 가볍고 안정적인 Alpine 리눅스 기반 이미지
+    container_name: fontogether_db_container
+    # ports:          # DB 포트는 외부 노출 X (보안)
+    #   - "5432:5432" 
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # application.yml 설정과 맞춰주세요
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./db_data:/var/lib/postgresql/data # DB 데이터를 로컬 폴더에 영구 저장 (컨테이너 꺼도 데이터 유지)
+    networks:
+      - font-net
+
+  # 3. pgAdmin (웹에서 DB를 관리하는 툴 - 선택 사항)
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: fontogether_admin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    depends_on:
+      - postgres
+    networks:
+      - font-net
+
+  # 1.8 Frontend (Next.js Node Server)
+  frontend:
+    build: ../fontogether
+    container_name: fontogether_frontend
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    depends_on:
+      - api
+    networks:
+      - font-net
+
+networks:
+  font-net:
+    driver: bridge

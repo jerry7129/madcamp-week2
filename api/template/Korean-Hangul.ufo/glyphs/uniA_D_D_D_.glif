@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniADDD" format="2">
+  <advance width="864"/>
+  <unicode hex="ADDD"/>
+  <outline>
+    <contour>
+      <point x="726" y="746" type="line"/>
+      <point x="726" y="684" type="line" smooth="yes"/>
+      <point x="726" y="620"/>
+      <point x="726" y="542"/>
+      <point x="705" y="438" type="curve"/>
+      <point x="830" y="438" type="line"/>
+      <point x="830" y="376" type="line"/>
+      <point x="614" y="376" type="line"/>
+      <point x="614" y="209" type="line"/>
+      <point x="731" y="209" type="line"/>
+      <point x="731" y="-79" type="line"/>
+      <point x="654" y="-79" type="line"/>
+      <point x="654" y="146" type="line"/>
+      <point x="117" y="146" type="line"/>
+      <point x="117" y="209" type="line"/>
+      <point x="249" y="209" type="line"/>
+      <point x="249" y="376" type="line"/>
+      <point x="35" y="376" type="line"/>
+      <point x="35" y="438" type="line"/>
+      <point x="628" y="438" type="line"/>
+      <point x="649" y="543"/>
+      <point x="649" y="620"/>
+      <point x="649" y="684" type="curve"/>
+      <point x="136" y="684" type="line"/>
+      <point x="136" y="746" type="line"/>
+    </contour>
+    <contour>
+      <point x="325" y="209" type="line"/>
+      <point x="538" y="209" type="line"/>
+      <point x="538" y="376" type="line"/>
+      <point x="325" y="376" type="line"/>
+    </contour>
+  </outline>
+</glyph>

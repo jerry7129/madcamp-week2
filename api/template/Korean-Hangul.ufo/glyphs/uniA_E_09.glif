@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniAE09" format="2">
+  <advance width="864"/>
+  <unicode hex="AE09"/>
+  <outline>
+    <contour>
+      <point x="215" y="292" type="line"/>
+      <point x="215" y="177" type="line"/>
+      <point x="649" y="177" type="line"/>
+      <point x="649" y="292" type="line"/>
+      <point x="726" y="292" type="line"/>
+      <point x="726" y="-67" type="line"/>
+      <point x="139" y="-67" type="line"/>
+      <point x="139" y="292" type="line"/>
+    </contour>
+    <contour>
+      <point x="215" y="-5" type="line"/>
+      <point x="649" y="-5" type="line"/>
+      <point x="649" y="116" type="line"/>
+      <point x="215" y="116" type="line"/>
+    </contour>
+    <contour>
+      <point x="726" y="749" type="line"/>
+      <point x="726" y="686" type="line" smooth="yes"/>
+      <point x="726" y="620"/>
+      <point x="725" y="542"/>
+      <point x="702" y="434" type="curve"/>
+      <point x="830" y="434" type="line"/>
+      <point x="830" y="370" type="line"/>
+      <point x="35" y="370" type="line"/>
+      <point x="35" y="434" type="line"/>
+      <point x="627" y="434" type="line"/>
+      <point x="649" y="542"/>
+      <point x="649" y="620"/>
+      <point x="649" y="686" type="curve"/>
+      <point x="136" y="686" type="line"/>
+      <point x="136" y="749" type="line"/>
+    </contour>
+  </outline>
+</glyph>

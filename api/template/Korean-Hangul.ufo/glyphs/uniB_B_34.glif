@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBB34" format="2">
+  <advance width="864"/>
+  <unicode hex="BB34"/>
+  <outline>
+    <contour>
+      <point x="829" y="284" type="line"/>
+      <point x="829" y="221" type="line"/>
+      <point x="467" y="221" type="line"/>
+      <point x="467" y="-79" type="line"/>
+      <point x="392" y="-79" type="line"/>
+      <point x="392" y="221" type="line"/>
+      <point x="34" y="221" type="line"/>
+      <point x="34" y="284" type="line"/>
+    </contour>
+    <contour>
+      <point x="726" y="740" type="line"/>
+      <point x="726" y="402" type="line"/>
+      <point x="137" y="402" type="line"/>
+      <point x="137" y="740" type="line"/>
+    </contour>
+    <contour>
+      <point x="212" y="678" type="line"/>
+      <point x="212" y="463" type="line"/>
+      <point x="649" y="463" type="line"/>
+      <point x="649" y="678" type="line"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test Client</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .box { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        #log { background: #f0f0f0; height: 300px; overflow-y: scroll; padding: 10px; border: 1px solid #999; }
+        .controls { display: grid; gap: 10px; margin-bottom: 20px; }
+        button { padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>🎨 Fontogether WebSocket Tester</h2>
+    
+    <div class="controls box">
+        <h3>1. Connection</h3>
+        <div>
+            Status: <span id="status" style="color: red">Disconnected</span>
+            <button onclick="connect()">Connect</button>
+            <button onclick="disconnect()">Disconnect</button>
+        </div>
+    </div>
+
+    <div class="controls box">
+        <h3>2. Actions</h3>
+        <div>
+            <label>Project ID: <input type="text" id="projectId" value="1"></label>
+            <button onclick="joinProject()">Join Project</button>
+            <button onclick="leaveProject()">Leave Project</button>
+        </div>
+        <hr>
+        <div>
+            <label>Unicode: <input type="text" id="unicode" value="65"></label>
+            <button onclick="sendGlyphUpdate()">Send 'A' Update (Random Path)</button>
+        </div>
+    </div>
+
+    <div id="log"></div>
+
+    <script>
+        let stompClient = null;
+        const myUserId = Math.floor(Math.random() * 1000); // Random ID for testing
+        const myNickname = "Tester_" + myUserId;
+
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const p = document.createElement('p');
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(p);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        function setStatus(connected) {
+            const el = document.getElementById('status');
+            el.textContent = connected ? "Connected" : "Disconnected";
+            el.style.color = connected ? "green" : "red";
+        }
+
+        function connect() {
+            const socket = new SockJS('http://localhost:8080/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.debug = null; // Disable debug logs in console
+
+            stompClient.connect({}, function (frame) {
+                setStatus(true);
+                log('Connected: ' + frame);
+            }, function (error) {
+                setStatus(false);
+                log('Connection Error: ' + error);
+            });
+        }
+
+        function disconnect() {
+            if (stompClient !== null) {
+                stompClient.disconnect();
+            }
+            setStatus(false);
+            log("Disconnected");
+        }
+
+        function joinProject() {
+            if (!stompClient || !stompClient.connected) return alert("Connect first!");
+            const projectId = document.getElementById('projectId').value;
+
+            // Subscribe to Presence
+            stompClient.subscribe(`/topic/project/${projectId}/presence`, function (msg) {
+                log(`[PRESENCE] ${msg.body}`);
+            });
+            
+            // Subscribe to Glyph Updates
+            stompClient.subscribe(`/topic/project/${projectId}/glyph/update`, function (msg) {
+                log(`[GLYPH] ${msg.body}`);
+            });
+
+            log(`Subscribed to Project ${projectId} channels.`);
+
+            // Send Join Message
+            stompClient.send("/app/project/join", {}, JSON.stringify({
+                userId: myUserId,
+                nickname: myNickname,
+                projectId: projectId,
+                action: "JOIN"
+            }));
+        }
+
+        function leaveProject() {
+            if (!stompClient || !stompClient.connected) return;
+            const projectId = document.getElementById('projectId').value;
+
+            stompClient.send("/app/project/leave", {}, JSON.stringify({
+                userId: myUserId,
+                nickname: myNickname,
+                projectId: projectId,
+                action: "LEAVE"
+            }));
+            
+            log(`Left Project ${projectId}`);
+        }
+
+        function sendGlyphUpdate() {
+            if (!stompClient || !stompClient.connected) return;
+            const projectId = document.getElementById('projectId').value;
+            const unicode = document.getElementById('unicode').value;
+
+            // Dummy UFO Data
+            const payload = {
+                projectId: projectId,
+                unicode: unicode,
+                glyphName: "TestGlyph",
+                pathData: JSON.stringify({
+                    name: "TestGlyph",
+                    advance: { width: 500 },
+                    outline: { contours: [] }, // Empty for test
+                    note: "Updated by " + myNickname + " at " + new Date().toLocaleTimeString()
+                }),
+                advanceWidth: 500,
+                userId: myUserId,
+                nickname: myNickname,
+                timestamp: Date.now()
+            };
+
+            stompClient.send("/app/glyph/update", {}, JSON.stringify(payload));
+            log(`Sent update for Unicode ${unicode}`);
+        }
+    </script>
+</body>
+</html>

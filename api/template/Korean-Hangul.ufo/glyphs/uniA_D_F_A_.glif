@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniADFA" format="2">
+  <advance width="864"/>
+  <unicode hex="ADFA"/>
+  <outline>
+    <contour>
+      <point x="406" y="244" type="line"/>
+      <point x="406" y="-79" type="line"/>
+      <point x="331" y="-79" type="line"/>
+      <point x="331" y="181" type="line"/>
+      <point x="114" y="181" type="line"/>
+      <point x="114" y="244" type="line"/>
+    </contour>
+    <contour>
+      <point x="733" y="244" type="line"/>
+      <point x="733" y="-79" type="line"/>
+      <point x="657" y="-79" type="line"/>
+      <point x="657" y="181" type="line"/>
+      <point x="447" y="181" type="line"/>
+      <point x="447" y="244" type="line"/>
+    </contour>
+    <contour>
+      <point x="726" y="743" type="line"/>
+      <point x="726" y="680" type="line" smooth="yes"/>
+      <point x="726" y="613"/>
+      <point x="725" y="533"/>
+      <point x="703" y="426" type="curve"/>
+      <point x="830" y="426" type="line"/>
+      <point x="830" y="362" type="line"/>
+      <point x="35" y="362" type="line"/>
+      <point x="35" y="426" type="line"/>
+      <point x="626" y="426" type="line"/>
+      <point x="649" y="534"/>
+      <point x="649" y="613"/>
+      <point x="649" y="680" type="curve"/>
+      <point x="136" y="680" type="line"/>
+      <point x="136" y="743" type="line"/>
+    </contour>
+  </outline>
+</glyph>

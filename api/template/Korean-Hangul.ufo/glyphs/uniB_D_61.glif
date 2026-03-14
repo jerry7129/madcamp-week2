@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBD61" format="2">
+  <advance width="864"/>
+  <unicode hex="BD61"/>
+  <outline>
+    <contour>
+      <point x="193" y="762" type="line"/>
+      <point x="193" y="676" type="line"/>
+      <point x="442" y="676" type="line"/>
+      <point x="442" y="762" type="line"/>
+      <point x="521" y="762" type="line"/>
+      <point x="521" y="476" type="line"/>
+      <point x="359" y="476" type="line"/>
+      <point x="359" y="392" type="line"/>
+      <point x="442" y="395"/>
+      <point x="524" y="400"/>
+      <point x="599" y="407" type="curve"/>
+      <point x="604" y="348" type="line"/>
+      <point x="427" y="328"/>
+      <point x="216" y="316"/>
+      <point x="46" y="315" type="curve"/>
+      <point x="36" y="382" type="line"/>
+      <point x="112" y="382"/>
+      <point x="195" y="385"/>
+      <point x="279" y="388" type="curve"/>
+      <point x="279" y="476" type="line"/>
+      <point x="116" y="476" type="line"/>
+      <point x="116" y="762" type="line"/>
+    </contour>
+    <contour>
+      <point x="193" y="535" type="line"/>
+      <point x="442" y="535" type="line"/>
+      <point x="442" y="620" type="line"/>
+      <point x="193" y="620" type="line"/>
+    </contour>
+    <contour>
+      <point x="744" y="788" type="line"/>
+      <point x="744" y="303" type="line"/>
+      <point x="667" y="303" type="line"/>
+      <point x="667" y="788" type="line"/>
+    </contour>
+    <contour>
+      <point x="753" y="267" type="line"/>
+      <point x="753" y="207" type="line"/>
+      <point x="246" y="207" type="line"/>
+      <point x="246" y="126" type="line"/>
+      <point x="743" y="126" type="line"/>
+      <point x="743" y="72" type="line"/>
+      <point x="246" y="72" type="line"/>
+      <point x="246" y="-11" type="line"/>
+      <point x="771" y="-11" type="line"/>
+      <point x="771" y="-72" type="line"/>
+      <point x="167" y="-72" type="line"/>
+      <point x="167" y="267" type="line"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniB2D8" format="2">
+  <advance width="864"/>
+  <unicode hex="B2D8"/>
+  <outline>
+    <contour>
+      <point x="751" y="789" type="line"/>
+      <point x="751" y="296" type="line"/>
+      <point x="676" y="296" type="line"/>
+      <point x="676" y="789" type="line"/>
+    </contour>
+    <contour>
+      <point x="167" y="737" type="line"/>
+      <point x="167" y="428" type="line"/>
+      <point x="311" y="428"/>
+      <point x="439" y="438"/>
+      <point x="577" y="468" type="curve"/>
+      <point x="589" y="403" type="line"/>
+      <point x="443" y="374"/>
+      <point x="310" y="363"/>
+      <point x="160" y="362" type="curve" smooth="yes"/>
+      <point x="90" y="362" type="line"/>
+      <point x="90" y="737" type="line"/>
+    </contour>
+    <contour>
+      <point x="751" y="256" type="line"/>
+      <point x="751" y="-67" type="line"/>
+      <point x="188" y="-67" type="line"/>
+      <point x="188" y="256" type="line"/>
+    </contour>
+    <contour>
+      <point x="263" y="194" type="line"/>
+      <point x="263" y="-5" type="line"/>
+      <point x="676" y="-5" type="line"/>
+      <point x="676" y="194" type="line"/>
+    </contour>
+  </outline>
+</glyph>

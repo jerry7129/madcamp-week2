@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Test Client</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .box { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+        .success { color: green; }
+        .error { color: red; }
+        input { display: block; margin-bottom: 10px; padding: 5px; width: 100%; box-sizing: border-box; }
+        button { padding: 8px 15px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+        hr { margin: 20px 0; border: 0; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <h1>🔐 Fontogether Auth Tester</h1>
+
+    <!-- 1. Local Signup -->
+    <div class="box">
+        <h3>1. Local Signup (회원가입)</h3>
+        <input type="email" id="signup-email" placeholder="Email (e.g. test@example.com)">
+        <input type="password" id="signup-password" placeholder="Password">
+        <input type="text" id="signup-nickname" placeholder="Nickname">
+        <button onclick="signup()">Sign Up</button>
+        <div id="signup-result"></div>
+    </div>
+
+    <!-- 2. Local Login -->
+    <div class="box">
+        <h3>2. Local Login (로그인)</h3>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Log In</button>
+        <div id="login-result"></div>
+    </div>
+
+    <!-- 3. Google Login -->
+    <div class="box">
+        <h3>3. Google Login (OAuth2)</h3>
+        <p>Clicking below will redirect you to Google's login page.</p>
+        <p>After login, you should be redirected to the root.</p>
+        <a href="/oauth2/authorization/google">
+            <button style="background: #db4437;">Sign in with Google</button>
+        </a>
+    </div>
+
+    <script>
+        // Relative path for flexibility (works on localhost and VM)
+        const API_BASE = ''; 
+
+        async function signup() {
+            const resultDiv = document.getElementById('signup-result');
+            resultDiv.innerHTML = 'Sending...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/users/signup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: document.getElementById('signup-email').value,
+                        password: document.getElementById('signup-password').value,
+                        nickname: document.getElementById('signup-nickname').value
+                    })
+                });
+
+                if (response.ok) {
+                    const userId = await response.json();
+                    resultDiv.innerHTML = `<p class="success">Success! User ID: ${userId}</p>`;
+                } else {
+                    resultDiv.innerHTML = `<p class="error">Error: ${response.status}</p>`;
+                }
+            } catch (e) {
+                resultDiv.innerHTML = `<p class="error">Exception: ${e.message}</p>`;
+            }
+        }
+
+        async function login() {
+            const resultDiv = document.getElementById('login-result');
+            resultDiv.innerHTML = 'Sending...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/users/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: document.getElementById('login-email').value,
+                        password: document.getElementById('login-password').value
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    resultDiv.innerHTML = `<p class="success">Login Successful!</p><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `<p class="error">Login Failed: ${response.status}</p>`;
+                }
+            } catch (e) {
+                resultDiv.innerHTML = `<p class="error">Exception: ${e.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBB18" format="2">
+  <advance width="864"/>
+  <unicode hex="BB18"/>
+  <outline>
+    <contour>
+      <point x="830" y="96" type="line"/>
+      <point x="830" y="32" type="line"/>
+      <point x="35" y="32" type="line"/>
+      <point x="35" y="96" type="line"/>
+      <point x="252" y="96" type="line"/>
+      <point x="252" y="311" type="line"/>
+      <point x="129" y="311" type="line"/>
+      <point x="129" y="718" type="line"/>
+      <point x="731" y="718" type="line"/>
+      <point x="731" y="311" type="line"/>
+      <point x="609" y="311" type="line"/>
+      <point x="609" y="96" type="line"/>
+    </contour>
+    <contour>
+      <point x="204" y="656" type="line"/>
+      <point x="204" y="372" type="line"/>
+      <point x="657" y="372" type="line"/>
+      <point x="657" y="656" type="line"/>
+    </contour>
+    <contour>
+      <point x="328" y="96" type="line"/>
+      <point x="534" y="96" type="line"/>
+      <point x="534" y="311" type="line"/>
+      <point x="328" y="311" type="line"/>
+    </contour>
+  </outline>
+</glyph>

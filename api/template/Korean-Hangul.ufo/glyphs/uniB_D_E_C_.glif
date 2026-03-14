@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBDEC" format="2">
+  <advance width="864"/>
+  <unicode hex="BDEC"/>
+  <outline>
+    <contour>
+      <point x="744" y="209" type="line"/>
+      <point x="744" y="-81" type="line"/>
+      <point x="668" y="-81" type="line"/>
+      <point x="668" y="23" type="line"/>
+      <point x="139" y="-2" type="line"/>
+      <point x="129" y="61" type="line"/>
+      <point x="668" y="78" type="line"/>
+      <point x="668" y="147" type="line"/>
+      <point x="149" y="147" type="line"/>
+      <point x="149" y="209" type="line"/>
+      <point x="284" y="209" type="line"/>
+      <point x="284" y="321" type="line"/>
+      <point x="201" y="318"/>
+      <point x="120" y="317"/>
+      <point x="46" y="317" type="curve"/>
+      <point x="35" y="383" type="line"/>
+      <point x="211" y="383"/>
+      <point x="420" y="384"/>
+      <point x="606" y="402" type="curve"/>
+      <point x="612" y="345" type="line"/>
+      <point x="531" y="335"/>
+      <point x="446" y="328"/>
+      <point x="362" y="324" type="curve"/>
+      <point x="362" y="209" type="line"/>
+    </contour>
+    <contour>
+      <point x="744" y="788" type="line"/>
+      <point x="744" y="253" type="line"/>
+      <point x="668" y="253" type="line"/>
+      <point x="668" y="788" type="line"/>
+    </contour>
+    <contour>
+      <point x="192" y="748" type="line"/>
+      <point x="192" y="662" type="line"/>
+      <point x="446" y="662" type="line"/>
+      <point x="446" y="748" type="line"/>
+      <point x="523" y="748" type="line"/>
+      <point x="523" y="459" type="line"/>
+      <point x="114" y="459" type="line"/>
+      <point x="114" y="748" type="line"/>
+    </contour>
+    <contour>
+      <point x="192" y="520" type="line"/>
+      <point x="446" y="520" type="line"/>
+      <point x="446" y="604" type="line"/>
+      <point x="192" y="604" type="line"/>
+    </contour>
+  </outline>
+</glyph>

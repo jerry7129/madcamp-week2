@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniBBA4" format="2">
+  <advance width="864"/>
+  <unicode hex="BBA4"/>
+  <outline>
+    <contour>
+      <point x="829" y="286" type="line"/>
+      <point x="829" y="223" type="line"/>
+      <point x="626" y="223" type="line"/>
+      <point x="626" y="-86" type="line"/>
+      <point x="550" y="-86" type="line"/>
+      <point x="550" y="223" type="line"/>
+      <point x="314" y="223" type="line"/>
+      <point x="314" y="-86" type="line"/>
+      <point x="238" y="-86" type="line"/>
+      <point x="238" y="223" type="line"/>
+      <point x="34" y="223" type="line"/>
+      <point x="34" y="286" type="line"/>
+    </contour>
+    <contour>
+      <point x="726" y="741" type="line"/>
+      <point x="726" y="403" type="line"/>
+      <point x="137" y="403" type="line"/>
+      <point x="137" y="741" type="line"/>
+    </contour>
+    <contour>
+      <point x="212" y="679" type="line"/>
+      <point x="212" y="465" type="line"/>
+      <point x="649" y="465" type="line"/>
+      <point x="649" y="679" type="line"/>
+    </contour>
+  </outline>
+</glyph>

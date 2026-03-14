@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniADDE" format="2">
+  <advance width="864"/>
+  <unicode hex="ADDE"/>
+  <outline>
+    <contour>
+      <point x="726" y="746" type="line"/>
+      <point x="726" y="684" type="line" smooth="yes"/>
+      <point x="726" y="620"/>
+      <point x="726" y="542"/>
+      <point x="705" y="438" type="curve"/>
+      <point x="830" y="438" type="line"/>
+      <point x="830" y="376" type="line"/>
+      <point x="614" y="376" type="line"/>
+      <point x="614" y="226" type="line"/>
+      <point x="733" y="226" type="line"/>
+      <point x="733" y="-79" type="line"/>
+      <point x="657" y="-79" type="line"/>
+      <point x="657" y="161" type="line"/>
+      <point x="447" y="161" type="line"/>
+      <point x="447" y="226" type="line"/>
+      <point x="538" y="226" type="line"/>
+      <point x="538" y="376" type="line"/>
+      <point x="325" y="376" type="line"/>
+      <point x="325" y="226" type="line"/>
+      <point x="406" y="226" type="line"/>
+      <point x="406" y="-79" type="line"/>
+      <point x="331" y="-79" type="line"/>
+      <point x="331" y="161" type="line"/>
+      <point x="114" y="161" type="line"/>
+      <point x="114" y="226" type="line"/>
+      <point x="249" y="226" type="line"/>
+      <point x="249" y="376" type="line"/>
+      <point x="35" y="376" type="line"/>
+      <point x="35" y="438" type="line"/>
+      <point x="628" y="438" type="line"/>
+      <point x="649" y="543"/>
+      <point x="649" y="620"/>
+      <point x="649" y="684" type="curve"/>
+      <point x="136" y="684" type="line"/>
+      <point x="136" y="746" type="line"/>
+    </contour>
+  </outline>
+</glyph>

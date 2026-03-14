@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniCFDD" format="2">
+  <advance width="864"/>
+  <unicode hex="CFDD"/>
+  <outline>
+    <contour>
+      <point x="737" y="-12" type="line"/>
+      <point x="737" y="-71" type="line"/>
+      <point x="125" y="-71" type="line"/>
+      <point x="125" y="271" type="line"/>
+      <point x="728" y="271" type="line"/>
+      <point x="728" y="212" type="line"/>
+      <point x="201" y="212" type="line"/>
+      <point x="201" y="130" type="line"/>
+      <point x="708" y="130" type="line"/>
+      <point x="708" y="73" type="line"/>
+      <point x="201" y="73" type="line"/>
+      <point x="201" y="-12" type="line"/>
+    </contour>
+    <contour>
+      <point x="733" y="761" type="line"/>
+      <point x="733" y="699" type="line" smooth="yes"/>
+      <point x="733" y="635"/>
+      <point x="734" y="561"/>
+      <point x="713" y="462" type="curve"/>
+      <point x="633" y="471" type="line"/>
+      <point x="640" y="508"/>
+      <point x="645" y="540"/>
+      <point x="648" y="571" type="curve"/>
+      <point x="113" y="546" type="line"/>
+      <point x="102" y="605" type="line"/>
+      <point x="651" y="623" type="line"/>
+      <point x="652" y="650"/>
+      <point x="653" y="675"/>
+      <point x="653" y="699" type="curve"/>
+      <point x="125" y="699" type="line"/>
+      <point x="125" y="761" type="line"/>
+    </contour>
+    <contour>
+      <point x="820" y="414" type="line"/>
+      <point x="820" y="353" type="line"/>
+      <point x="28" y="353" type="line"/>
+      <point x="28" y="414" type="line"/>
+      <point x="239" y="414" type="line"/>
+      <point x="239" y="523" type="line"/>
+      <point x="316" y="523" type="line"/>
+      <point x="316" y="414" type="line"/>
+      <point x="457" y="414" type="line"/>
+      <point x="457" y="523" type="line"/>
+      <point x="534" y="523" type="line"/>
+      <point x="534" y="414" type="line"/>
+    </contour>
+  </outline>
+</glyph>

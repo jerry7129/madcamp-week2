@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uniB278" format="2">
+  <advance width="864"/>
+  <unicode hex="B278"/>
+  <outline>
+    <contour>
+      <point x="201" y="201" type="line"/>
+      <point x="201" y="11" type="line"/>
+      <point x="740" y="11" type="line"/>
+      <point x="740" y="-53" type="line"/>
+      <point x="124" y="-53" type="line"/>
+      <point x="124" y="201" type="line"/>
+    </contour>
+    <contour>
+      <point x="213" y="750" type="line"/>
+      <point x="213" y="516" type="line"/>
+      <point x="730" y="516" type="line"/>
+      <point x="730" y="452" type="line"/>
+      <point x="134" y="452" type="line"/>
+      <point x="134" y="750" type="line"/>
+    </contour>
+    <contour>
+      <point x="822" y="346" type="line"/>
+      <point x="822" y="280" type="line"/>
+      <point x="611" y="280" type="line"/>
+      <point x="611" y="113" type="line"/>
+      <point x="534" y="113" type="line"/>
+      <point x="534" y="280" type="line"/>
+      <point x="369" y="280" type="line"/>
+      <point x="369" y="119" type="line"/>
+      <point x="292" y="119" type="line"/>
+      <point x="292" y="280" type="line"/>
+      <point x="28" y="280" type="line"/>
+      <point x="28" y="346" type="line"/>
+    </contour>
+  </outline>
+</glyph>

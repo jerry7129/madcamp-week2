@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>familyName</key>
+	<string>HangulFont</string>
+	<key>styleName</key>
+	<string>Regular</string>
+	<key>styleMapFamilyName</key>
+	<string>HangulFont</string>
+	<key>versionMajor</key>
+	<integer>1</integer>
+	<key>versionMinor</key>
+	<integer>0</integer>
+	<key>copyright</key>
+	<string></string>
+	<key>unitsPerEm</key>
+	<integer>1000</integer>
+	<key>ascender</key>
+	<integer>800</integer>
+	<key>descender</key>
+	<integer>-200</integer>
+	<key>italicAngle</key>
+	<real>0</real>
+	<key>note</key>
+	<string></string>
+	<key>openTypeHeadCreated</key>
+	<string>2026/01/20 15:48:25</string>
+	<key>openTypeHheaAscender</key>
+	<integer>956</integer>
+	<key>openTypeHheaDescender</key>
+	<integer>-227</integer>
+	<key>openTypeHheaLineGap</key>
+	<integer>0</integer>
+	<key>openTypeNameVersion</key>
+	<string>Version 1.000</string>
+	<key>postscriptFontName</key>
+	<string>HangulFont</string>
+	<key>postscriptFullName</key>
+	<string>HangulFont-Regular</string>
+	<key>postscriptWeightName</key>
+	<string>Regular</string>
+	<key>postscriptUnderlineThickness</key>
+	<integer>50</integer>
+	<key>postscriptUnderlinePosition</key>
+	<integer>-100</integer>
+	<key>postscriptIsFixedPitch</key>
+	<false/>
+	<key>guidelines</key>
+	<array/>
+</dict>
+</plist>
