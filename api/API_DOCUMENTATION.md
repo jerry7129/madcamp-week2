@@ -12,6 +12,11 @@
 
 ## 📚 Interactive Documentation (Swagger)
 For testing and interactive documentation, please visit **Swagger UI**:
+
+loclahost
+- [http://localhost/swagger-ui/index.html](http://localhost/swagger-ui/index.html)
+
+K-Cloud VM
 - [http://172.10.5.122.nip.io/swagger-ui/index.html](http://172.10.5.122.nip.io/swagger-ui/index.html)
 
 ---
@@ -51,8 +56,6 @@ For testing and interactive documentation, please visit **Swagger UI**:
   }
   ```
 
-  ```
-
 ### 3. 사용자 상세 조회
 - **URL**: `GET /api/users/{userId}`
 - **Response**: `200 OK`
@@ -67,6 +70,7 @@ For testing and interactive documentation, please visit **Swagger UI**:
 ### 4. 사용자 정보 수정
 - **URL**: `PUT /api/users/{userId}`
 - **Request Body**:
+  ```json
   {
       "nickname": "New Nickname"
   }
@@ -138,7 +142,7 @@ For testing and interactive documentation, please visit **Swagger UI**:
           "id": 1,
           "email": "user@gmail.com",
           "nickname": "Google User",
-          "provider": "google"
+          "provider": "google",
           ...
       },
       "sessionId": "..."
@@ -313,8 +317,6 @@ For testing and interactive documentation, please visit **Swagger UI**:
     "userId": 1,
     "nickname": "Designer"
   }
-  ```
-
   ```
 
 ### 2. Glyph Management (관리)
