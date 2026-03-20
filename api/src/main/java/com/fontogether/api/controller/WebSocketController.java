@@ -29,25 +29,27 @@ public class WebSocketController {
      */
     @MessageMapping("/glyph/update")
     public void handleGlyphUpdate(@Payload GlyphUpdateMessage message, SimpMessageHeaderAccessor headerAccessor) {
-        log.info("Received glyph update: projectId={}, unicodes={}, userId={}", 
-                message.getProjectId(), message.getUnicodes(), message.getUserId());
+        log.debug("Received glyph update: projectId={}, glyphName={}, isCommit={}", 
+                message.getProjectId(), message.getGlyphName(), message.getIsCommit());
 
-        // 1. DB에 저장
         try {
-            glyphService.saveGlyph(
-                    message.getProjectId(),
-                    message.getGlyphName(),
-                    message.getOutlineData(), // Changed from getPathData
-                    message.getAdvanceWidth(),
-                    message.getUnicodes()
-            );
+            // 1. DB에 저장 (Commit인 경우에만)
+            if (Boolean.TRUE.equals(message.getIsCommit())) {
+                glyphService.saveGlyph(
+                        message.getProjectId(),
+                        message.getGlyphName(),
+                        message.getOutlineData(), // JSON contours/components
+                        message.getAdvanceWidth(),
+                        message.getUnicodes()
+                );
+            }
 
             // 2. 타임스탬프 설정 (없으면 현재 시간으로)
             if (message.getTimestamp() == null) {
                 message.setTimestamp(System.currentTimeMillis());
             }
 
-            // 3. 프로젝트의 모든 사용자에게 브로드캐스트
+            // 3. 프로젝트의 모든 사용자에게 브로드캐스트 (단순 드로잉 좌표 공유 포함)
             collaborationService.broadcastGlyphUpdate(message.getProjectId(), message);
         } catch (Exception e) {
             log.error("Error handling glyph update", e);

@@ -21,4 +21,7 @@ public class GlyphUpdateMessage {
     private Long userId;      // 변경한 사용자 ID
     private String nickname;  // 변경한 사용자 닉네임
     private Long timestamp;   // 변경 시각 (Unix timestamp)
+    
+    @Builder.Default
+    private Boolean isCommit = true; // DB 저장 필요 여부 (기본값 true)
 }

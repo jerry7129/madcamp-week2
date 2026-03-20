@@ -90,7 +90,7 @@ export default function GlyphsView() {
 
     // C. 사용자 접속 현황
     client.subscribe(`/topic/project/${currentProjectId}/presence`, (message) => {
-      // console.log('접속자 업데이트:', JSON.parse(message.body));
+      console.log('접속자 업데이트:', JSON.parse(message.body));
     });
 
     // D. 강퇴 알림
@@ -155,23 +155,7 @@ export default function GlyphsView() {
   const [fontData, setFontData] = useState<ProjectData | null>(null);
   const [glyphData, setGlyphData] = useState<GlyphData[]>([]);
 
-  const updateGlyphData = (newGlyphData: GlyphData) => {
-    /* non-web socket method */
-    // fetch(process.env.NEXT_PUBLIC_SERVER_URI + `/api/projects/${projectId}/glyphs`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     projectId: projectId,
-    //     glyphName: newGlyphData.glyphName,
-    //     unicodes: newGlyphData.unicodes.map(num => num.toString(16).toUpperCase().padStart(4, '0')),
-    //     outlineData: JSON.stringify(newGlyphData.outlineData),
-    //     advanceWidth: newGlyphData.advanceWidth,
-    //   })
-    // })
-    //   .then(res => console.log(res));
-
+  const updateGlyphData = (newGlyphData: GlyphData, isCommit: boolean = true) => {
     /* web socket method */
     if (stompClient && stompClient.connected) {
       stompClient.publish({
@@ -183,7 +167,8 @@ export default function GlyphsView() {
           advanceWidth: newGlyphData.advanceWidth,
           userId: user.id,
           nickname: user.nickname,
-          unicodes: newGlyphData.unicodes
+          unicodes: newGlyphData.unicodes,
+          isCommit: isCommit
         })
       });
     }

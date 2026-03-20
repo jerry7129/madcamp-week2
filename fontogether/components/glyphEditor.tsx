@@ -7,7 +7,7 @@ import { GlyphData } from "@/types/font";
 interface GlyphEditorProps {
   glyphData: GlyphData;
   updatedTime: number | null;
-  onGlyphDataChange: (a: GlyphData) => void;
+  onGlyphDataChange: (data: GlyphData, isCommit?: boolean) => void;
   key: string;
   zoomAction: {
     type: 'IN' | 'OUT' | 'RESET';
@@ -41,6 +41,16 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
   const [selectedPointInfo, setSelectedPointInfo] = useState<{ x: number; y: number } | null>(null);
   const [selectionBounds, setSelectionBounds] = useState<{ width: number; height: number } | null>(null);
   const [zoomLevel, setZoomLevel] = useState(100);
+
+  // Throttling logic for real-time visual syncing without DB commit
+  const lastUpdateRef = useRef<number>(0);
+  const throttledUpdate = useCallback((data: GlyphData) => {
+    const now = Date.now();
+    if (now - lastUpdateRef.current > 50) { // 50ms throttle
+      onGlyphDataChange(data, false);
+      lastUpdateRef.current = now;
+    }
+  }, [onGlyphDataChange]);
 
   const clearHighlights = useCallback(() => {
     highlightItemsRef.current.forEach(item => item.remove());
@@ -499,6 +509,10 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
       }
       refreshHighlights();
       // paper.view.draw();
+
+      // 브로드캐스트용 실시간 전송 (DB 저장 안 함)
+      const updatedData = syncPaperToData(paper.project);
+      throttledUpdate({ ...glyphData, outlineData: updatedData });
     };
 
     pointerToolRef.current.onMouseUp = (event: paper.ToolEvent) => {
@@ -530,9 +544,9 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
       }
       // paper.view.draw();
 
-      // 저장
+      // 저장 (최종 DB Commit)
       const updatedData = syncPaperToData(paper.project);
-      onGlyphDataChange({ ...glyphData, outlineData: updatedData });
+      onGlyphDataChange({ ...glyphData, outlineData: updatedData }, true);
     }
 
     // Pen tool: draw new shapes
@@ -598,15 +612,19 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
         
         refreshHighlights();
         // paper.view.draw();
+
+        // 브로드캐스트용 실시간 전송
+        const updatedData = syncPaperToData(paper.project);
+        throttledUpdate({ ...glyphData, outlineData: updatedData });
       }
     };
 
     penToolRef.current.onMouseUp = () => {
       lastSegment = null;
 
-      // 저장
+      // 저장 (최종 DB Commit)
       const updatedData = syncPaperToData(paper.project);
-      onGlyphDataChange({ ...glyphData, outlineData: updatedData });
+      onGlyphDataChange({ ...glyphData, outlineData: updatedData }, true);
     };
 
     // Curve tool: change curvature
@@ -662,6 +680,10 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
         
         refreshHighlights();
         // paper.view.draw();
+
+        // 브로드캐스트용 실시간 전송
+        const updatedData = syncPaperToData(paper.project);
+        throttledUpdate({ ...glyphData, outlineData: updatedData });
       }
     };
 
@@ -684,9 +706,9 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
       }
       hitSegment = null;
 
-      // 저장
+      // 저장 (최종 DB Commit)
       const updatedData = syncPaperToData(paper.project);
-      onGlyphDataChange({ ...glyphData, outlineData: updatedData });
+      onGlyphDataChange({ ...glyphData, outlineData: updatedData }, true);
     };
 
     // Hand tool --- move screen around
@@ -777,6 +799,10 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
         strokeWidth: 2,
       });
       // paper.view.draw();
+
+      // 브로드캐스트용 실시간 전송
+      const updatedData = syncPaperToData(paper.project);
+      throttledUpdate({ ...glyphData, outlineData: updatedData });
     };
 
     rectangleToolRef.current.onMouseUp = () => {
@@ -786,9 +812,9 @@ export default function GlyphEditor({ glyphData, updatedTime, onGlyphDataChange,
       }
       rectStartPoint = null;
 
-      // 저장
+      // 저장 (최종 DB Commit)
       const updatedData = syncPaperToData(paper.project);
-      onGlyphDataChange({ ...glyphData, outlineData: updatedData });
+      onGlyphDataChange({ ...glyphData, outlineData: updatedData }, true);
     };
 
     // Circle tool
